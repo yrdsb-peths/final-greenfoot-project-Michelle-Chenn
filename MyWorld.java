@@ -18,7 +18,12 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1, false);
         
+        //Create Fish object
         createFish();
+        
+        //Create Weapon object
+        Weapon weapon = new Weapon();
+        addObject(weapon, getWidth()/2, 300);
     }
     
     public void createFish(){
