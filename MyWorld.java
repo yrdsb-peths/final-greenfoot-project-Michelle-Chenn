@@ -26,8 +26,8 @@ public class MyWorld extends World
     }
     
     public void act(){
-        //Spawns fish at regular intervals
-        if(fishMove.millisElapsed() < 1000){
+        //Spawns fish at random intervals
+        if(fishMove.millisElapsed() < (Greenfoot.getRandomNumber(speed))*800){
             return;
         }
         fishMove.mark();
@@ -60,7 +60,7 @@ public class MyWorld extends World
     public void fish3(){
         Fish fishies = new Fish();
         
-        int x = getWidth();
+        int x = getWidth() + 100;
         int y = 50;
         
         addObject(fishies, x, y);
