@@ -16,10 +16,26 @@ public class Turtle extends Actor
     
     public Turtle(){
         setImage(idle);
+        idle.scale(50,50);
     }
     
     public void act()
     {
-        // Add your action code here.
+        if(Greenfoot.isKeyDown("d")){
+            move(1);
+        }
+        if(Greenfoot.isKeyDown("a")){
+            move(-1);
+        }
+        fireWeapon();
+    }
+    
+    public void fireWeapon(){
+        MyWorld world = new MyWorld();
+        if(Greenfoot.mousePressed(world)){
+            Weapon weapon = new Weapon();
+            getWorld().addObject(weapon, getX(), getY());
+            weapon.setRotation(270);
+        }
     }
 }
