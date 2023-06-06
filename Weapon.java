@@ -15,5 +15,8 @@ public class Weapon extends Actor
     public void act()
     {
         move(5);
+        
+        //Remove fish if weapon hits it
+        removeTouching(Fish.class);
     }
 }

@@ -16,6 +16,7 @@ public class Turtle extends Actor
     
     public Turtle(){
         setImage(idle);
+        idle.scale(50,50);
     }
     
     public void act()
