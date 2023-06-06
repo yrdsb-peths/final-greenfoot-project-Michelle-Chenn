@@ -15,6 +15,11 @@ public class Fish extends Actor
      */
     public void act()
     {
-        setLocation(getX() - speed, getY());
+        if(getY()==100){
+            setLocation(getX() + speed, getY());
+        }
+        else{
+            setLocation(getX() - speed, getY());
+        }
     }
 }
