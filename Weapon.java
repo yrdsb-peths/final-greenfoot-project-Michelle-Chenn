@@ -14,6 +14,6 @@ public class Weapon extends Actor
     }
     public void act()
     {
-        //
+        move(5);
     }
 }

@@ -24,10 +24,6 @@ public class MyWorld extends World
         //Create Turtle object
         Turtle turtle = new Turtle();
         addObject(turtle, getWidth()/2, 300);        
-        
-        //Create Weapon object
-        Weapon weapon = new Weapon();
-        addObject(weapon, getWidth()/2, 300);
     }
     
     public void createFish(){

@@ -26,5 +26,15 @@ public class Turtle extends Actor
         if(Greenfoot.isKeyDown("a")){
             move(-1);
         }
+        fireWeapon();
+    }
+    
+    public void fireWeapon(){
+        MyWorld world = new MyWorld();
+        if(Greenfoot.mousePressed(world)){
+            Weapon weapon = new Weapon();
+            getWorld().addObject(weapon, getX(), getY());
+            weapon.setRotation(270);
+        }
     }
 }
