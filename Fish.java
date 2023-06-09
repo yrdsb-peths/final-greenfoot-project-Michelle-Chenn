@@ -18,9 +18,14 @@ public class Fish extends Actor
         //makes it fall down
         setLocation(getX() - speed, getY());
         
-        //Remove fish
+        //Remove fish and decreases health when fish pass merguy
         MyWorld world = (MyWorld) getWorld();
-        if(getY() >= world.getHeight()){
+        int health = 10;
+        if(getX() == 0){
+            health--;
+            if(health>0){
+                world.decreaseHealth();
+            }
             world.removeObject(this);
         }
     }
