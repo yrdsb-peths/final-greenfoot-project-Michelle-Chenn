@@ -10,6 +10,7 @@ public class Merguy extends Actor
 {
     GreenfootImage[] idle = new GreenfootImage[4];
     GreenfootImage[] walk = new GreenfootImage[6];
+    GreenfootImage[] attack = new GreenfootImage[6];
     
     SimpleTimer animationTimer = new SimpleTimer();
 
@@ -25,6 +26,10 @@ public class Merguy extends Actor
         
         for(int i = 0; i < walk.length; i++){
             walk[i] = new GreenfootImage("images/merguy_walk/sprite_" + i + ".png");
+        }
+        
+        for(int i = 0; i < attack.length; i++){
+            attack[i] = new GreenfootImage("images/merguy_attack/sprite_" + i + ".png");
         }
         
         animationTimer.mark();
@@ -47,12 +52,15 @@ public class Merguy extends Actor
         animateMerguy();
     }
     
-    //Fires weapon up from whatever point the Merguy is at
+    //Fires weapon at enemies from whatever point the Merguy is at
     public void fireWeapon(){
         if(Greenfoot.mousePressed(null)){
             Weapon weapon = new Weapon();
             getWorld().addObject(weapon, getX(), getY());
-            
+
+            for(int i = 0; i < attack.length; i++){
+                setImage(attack[i]);
+            }
         }
     }
     
