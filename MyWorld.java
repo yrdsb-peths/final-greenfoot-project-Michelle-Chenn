@@ -10,6 +10,8 @@ public class MyWorld extends World
 {
     SimpleTimer fishMove = new SimpleTimer();
     int speed = 500;
+    Label scoreLabel;
+    Label healthBar;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -22,7 +24,15 @@ public class MyWorld extends World
         
         //Create Turtle object
         Merguy turtle = new Merguy();
-        addObject(turtle, 100, getHeight()/2);        
+        addObject(turtle, 100, getHeight()/2);  
+        
+        //Create score label
+        scoreLabel = new Label(0, 60);
+        addObject(scoreLabel, 50, 50);
+        
+        //Create health bar
+        healthBar = new Label (10, 80);
+        addObject(healthBar, 660, 50);
     }
     
     public void act(){
@@ -44,4 +54,8 @@ public class MyWorld extends World
         
         addObject(fishies, x, y);
     }
+    
+    /**
+     * Decreases health and ends game when health reaches 0
+     */
 }

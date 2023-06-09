@@ -52,7 +52,9 @@ public class Merguy extends Actor
         animateMerguy();
     }
     
-    //Fires weapon at enemies from whatever point the Merguy is at
+    /**
+     * Fires weapon at enemies from whatever point the Merguy is at and animates attack
+     */
     public void fireWeapon(){
         if(Greenfoot.mousePressed(null)){
             Weapon weapon = new Weapon();
@@ -70,6 +72,7 @@ public class Merguy extends Actor
     int imageIndex = 0;
     int imageIndex2 = 0;
     public void animateMerguy(){
+        //walking animation
         if(Greenfoot.isKeyDown("w")||Greenfoot.isKeyDown("s")){
             if(animationTimer.millisElapsed() < 190){
                 return;
@@ -87,6 +90,7 @@ public class Merguy extends Actor
                 setRotation(90);
             }
         }
+        //idle animation
         else{
             if(animationTimer.millisElapsed() < 190){
                 return;
