@@ -21,7 +21,7 @@ public class MyWorld extends World
         super(600, 400, 1, false);
         
         //Create Turtle object
-        Turtle turtle = new Turtle();
+        Merguy turtle = new Merguy();
         addObject(turtle, 100, getHeight()/2);        
     }
     
