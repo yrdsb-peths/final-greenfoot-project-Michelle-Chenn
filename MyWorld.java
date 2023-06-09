@@ -18,11 +18,11 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(400, 600, 1, false);
+        super(600, 400, 1, false);
         
         //Create Turtle object
         Turtle turtle = new Turtle();
-        addObject(turtle, getWidth()/2, 500);        
+        addObject(turtle, 100, getHeight()/2);        
     }
     
     public void act(){
@@ -39,8 +39,8 @@ public class MyWorld extends World
     public void createFish(){
         Fish fishies = new Fish();
         
-        int x = Greenfoot.getRandomNumber(getWidth());
-        int y = 0;
+        int x = getWidth();
+        int y = Greenfoot.getRandomNumber(getHeight());
         
         addObject(fishies, x, y);
     }

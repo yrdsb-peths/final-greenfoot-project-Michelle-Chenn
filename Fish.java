@@ -16,7 +16,7 @@ public class Fish extends Actor
     public void act()
     {
         //makes it fall down
-        setLocation(getX(), getY() + speed);
+        setLocation(getX() - speed, getY());
         
         //Remove fish
         MyWorld world = (MyWorld) getWorld();
