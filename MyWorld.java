@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     SimpleTimer fishMove = new SimpleTimer();
-    int speed = 1000;
+    int speed = 500;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -18,50 +18,29 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1, false);
+        super(400, 600, 1, false);
         
         //Create Turtle object
         Turtle turtle = new Turtle();
-        addObject(turtle, getWidth()/2, 300);        
+        addObject(turtle, getWidth()/2, 500);        
     }
     
     public void act(){
-        //Spawns fish at random intervals
-        if(fishMove.millisElapsed() < (Greenfoot.getRandomNumber(speed))*800){
+        if(fishMove.millisElapsed() < 1000){
             return;
         }
         fishMove.mark();
-        fish1();
-        fish2();
-        fish3();
+        createFish();
     }
     
-    //Fish row 1
-    public void fish1(){
+    /**
+     * Create new fish at a random location at top of screen
+     */
+    public void createFish(){
         Fish fishies = new Fish();
         
-        int x = getWidth();
-        int y = 150;
-        
-        addObject(fishies, x, y);
-    }
-    
-    //Fish row 2
-    public void fish2(){
-        Fish fishies = new Fish();
-        
-        int x = 0;
-        int y = 100;
-        
-        addObject(fishies, x, y);
-    }
-    
-    //Fish row 3
-    public void fish3(){
-        Fish fishies = new Fish();
-        
-        int x = getWidth() + 100;
-        int y = 50;
+        int x = Greenfoot.getRandomNumber(getWidth());
+        int y = 0;
         
         addObject(fishies, x, y);
     }

@@ -30,6 +30,7 @@ public class Turtle extends Actor
         fireWeapon();
     }
     
+    //Fires weapon up from whatever point the turtle is at
     public void fireWeapon(){
         MyWorld world = new MyWorld();
         if(Greenfoot.mousePressed(world)){

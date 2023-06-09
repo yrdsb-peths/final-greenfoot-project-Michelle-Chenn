@@ -15,11 +15,13 @@ public class Fish extends Actor
      */
     public void act()
     {
-        if(getY()==100){
-            setLocation(getX() + speed, getY());
-        }
-        else{
-            setLocation(getX() - speed, getY());
+        //makes it fall down
+        setLocation(getX(), getY() + speed);
+        
+        //Remove fish
+        MyWorld world = (MyWorld) getWorld();
+        if(getY() >= world.getHeight()){
+            world.removeObject(this);
         }
     }
 }
