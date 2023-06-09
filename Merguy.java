@@ -85,6 +85,7 @@ public class Merguy extends Actor
             }
             animationTimer.mark();
             
+            setRotation(0);
             setImage(idle[imageIndex2]);
             imageIndex2 = (imageIndex2 + 1) % idle.length;
         }
