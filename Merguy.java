@@ -11,6 +11,7 @@ public class Merguy extends Actor
     GreenfootImage[] idle = new GreenfootImage[4];
     GreenfootImage[] walk = new GreenfootImage[6];
     GreenfootImage[] attack = new GreenfootImage[6];
+    GreenfootImage[] death = new GreenfootImage[6];
     
     SimpleTimer animationTimer = new SimpleTimer();
 
@@ -30,6 +31,10 @@ public class Merguy extends Actor
         
         for(int i = 0; i < attack.length; i++){
             attack[i] = new GreenfootImage("images/merguy_attack/sprite_" + i + ".png");
+        }
+        
+        for(int i = 0; i < death.length; i++){
+            death[i] = new GreenfootImage("images/merguy_death/sprite_" + i + ".png");
         }
         
         animationTimer.mark();
@@ -90,6 +95,7 @@ public class Merguy extends Actor
                 setRotation(90);
             }
         }
+        
         //idle animation
         else{
             if(animationTimer.millisElapsed() < 190){

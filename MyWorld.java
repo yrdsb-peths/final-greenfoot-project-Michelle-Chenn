@@ -13,6 +13,7 @@ public class MyWorld extends World
     Label scoreLabel;
     Label healthBar;
     public int health = 5;
+    public int score = 0;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -32,7 +33,7 @@ public class MyWorld extends World
         addObject(scoreLabel, 50, 50);
         
         //Create health bar
-        healthBar = new Label (10, 60);
+        healthBar = new Label (5, 60);
         addObject(healthBar, 550, 50);
     }
     
@@ -57,6 +58,14 @@ public class MyWorld extends World
         int y = Greenfoot.getRandomNumber(getHeight());
         
         addObject(fishies, x, y);
+    }
+    
+    /**
+     * Increases score and game difficulty
+     */
+    public void increaseScore(){
+        score++;
+        scoreLabel.setValue(score);
     }
     
     /**
