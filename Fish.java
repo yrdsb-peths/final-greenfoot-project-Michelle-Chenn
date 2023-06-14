@@ -35,7 +35,7 @@ public class Fish extends Actor
         //makes it fall down
         setLocation(getX() - speed, getY());
         
-        //Remove fish, do exploding animation and decreases health when fish pass merguy
+        //Remove fish and decreases health when fish pass merguy
         MyWorld world = (MyWorld) getWorld();
         int health = 5;
         if(getX() == 0){

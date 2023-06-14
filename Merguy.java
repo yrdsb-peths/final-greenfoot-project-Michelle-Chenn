@@ -16,6 +16,8 @@ public class Merguy extends Actor
     SimpleTimer animationTimer = new SimpleTimer();
 
     String facing = "up";
+    
+    int speed = 3;
     /**
      * Constructor
      */
@@ -42,11 +44,11 @@ public class Merguy extends Actor
     public void act()
     {
         if(Greenfoot.isKeyDown("s")){
-            setLocation(getX(), getY() + 1);
+            setLocation(getX(), getY() + speed);
             facing = "down";
         }
         if(Greenfoot.isKeyDown("w")){
-            setLocation(getX(), getY() - 1);
+            setLocation(getX(), getY() - speed);
             facing = "up";
         }
         fireWeapon();
