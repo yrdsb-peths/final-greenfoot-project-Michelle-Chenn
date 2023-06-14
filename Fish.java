@@ -35,7 +35,7 @@ public class Fish extends Actor
         //makes it fall down
         setLocation(getX() - speed, getY());
         
-        //Remove fish and decreases health when fish pass merguy
+        //Remove fish, do exploding animation and decreases health when fish pass merguy
         MyWorld world = (MyWorld) getWorld();
         int health = 5;
         if(getX() == 0){
@@ -47,7 +47,7 @@ public class Fish extends Actor
         }
         animateFish();
     }
-     int imageIndex = 0;
+    int imageIndex = 0;
     public void animateFish(){
         if(animationTimer.millisElapsed() < 190){
                     return;

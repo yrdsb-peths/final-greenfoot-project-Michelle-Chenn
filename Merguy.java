@@ -33,10 +33,6 @@ public class Merguy extends Actor
             attack[i] = new GreenfootImage("images/merguy_attack/sprite_" + i + ".png");
         }
         
-        for(int i = 0; i < death.length; i++){
-            death[i] = new GreenfootImage("images/merguy_death/sprite_" + i + ".png");
-        }
-        
         animationTimer.mark();
         
         //Initial Merguy image
