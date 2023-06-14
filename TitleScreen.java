@@ -28,8 +28,8 @@ public class TitleScreen extends World
     public void act(){
         //Start game if user clicks mouse
         if(Greenfoot.mousePressed(start)){
-            MyWorld gameWorld = new MyWorld();
-            Greenfoot.setWorld(gameWorld);
+            Instructions instructions = new Instructions();
+            Greenfoot.setWorld(instructions);
         }
     }
 }
