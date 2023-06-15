@@ -10,6 +10,9 @@ public class TitleScreen extends World
 {
     Label titleLabel = new Label("Fish Blaster", 100);
     Start start = new Start();
+    Cheat cheat = new Cheat();    
+    public int score = 0;
+    
     /**
      * Constructor for objects of class TitleScreen.
      * 

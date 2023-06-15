@@ -59,8 +59,9 @@ public class Merguy extends Actor
     /**
      * Fires weapon at enemies from whatever point the Merguy is at and animates attack
      */
+    MyWorld world = new MyWorld();
     public void fireWeapon(){
-        if(Greenfoot.mousePressed(null)){
+        if(Greenfoot.mousePressed()){
             Weapon weapon = new Weapon();
             getWorld().addObject(weapon, getX(), getY());
 

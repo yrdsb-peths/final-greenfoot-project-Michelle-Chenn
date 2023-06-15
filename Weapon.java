@@ -34,7 +34,6 @@ public class Weapon extends Actor
             world.increaseScore();
         }
         
-        
     }
     
     int imageIndex1 = 0;

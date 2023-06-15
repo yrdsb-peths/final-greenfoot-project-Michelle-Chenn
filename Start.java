@@ -9,15 +9,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Start extends Actor
 {
     GreenfootImage start = new GreenfootImage("images/keys/Play.png");
-    /**
-     * Act - do whatever the Start wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public Start(){
         //Start button image
         start.scale(60, 60);
         setImage(start);
     }
+    /**
+     * Act - do whatever the Start wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
         

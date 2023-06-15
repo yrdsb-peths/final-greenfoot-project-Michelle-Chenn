@@ -14,10 +14,14 @@ public class MyWorld extends World
     Label scoreLabel;
     public int health = 3;
     public int score = 0;
+    Cheat cheat = new Cheat();
     
     Heart heart1 = new Heart();
     Heart heart2 = new Heart();
     Heart heart3 = new Heart();
+    NoHeart noHeart1 = new NoHeart();
+    NoHeart noHeart2 = new NoHeart();
+    NoHeart noHeart3 = new NoHeart();
     
     /**
      * Constructor for objects of class MyWorld.
@@ -40,6 +44,9 @@ public class MyWorld extends World
         addObject(heart1, 470, 50);
         addObject(heart2, 520, 50);
         addObject(heart3, 570, 50);
+        
+        //Add cheat button
+        addObject(cheat, 20, 360);
     }
     
     public void act(){
@@ -50,6 +57,7 @@ public class MyWorld extends World
             }
             fishMove.mark();
             createFish();
+            createGift();
         }
     }
     
@@ -87,17 +95,16 @@ public class MyWorld extends World
         if(health>0){
             health--;
             Greenfoot.playSound("sounds/hurt.mp3");
-            NoHeart noHeart = new NoHeart();
             if(health==2){
-                addObject(noHeart, 570, 50);
+                addObject(noHeart3, 570, 50);
                 removeObject(heart3);
             }
             if(health==1){
-                addObject(noHeart, 520, 50);
+                addObject(noHeart2, 520, 50);
                 removeObject(heart2);
             }
             if(health==0){
-                addObject(noHeart, 470, 50);
+                addObject(noHeart1, 470, 50);
                 removeObject(heart1);
             }
         }
@@ -108,11 +115,51 @@ public class MyWorld extends World
     }
     
     /**
+     * Increases health
+     */
+    public void increaseHealth(){        
+        if(health==2){
+            addObject(heart3, 570, 50);
+            removeObject(noHeart3);
+        }
+        if(health==1){
+            addObject(heart2, 520, 50);
+            removeObject(noHeart2);
+        }
+        health++;
+    }
+    
+    /**
      * End the game and draw 'GameOver'
      */
     public void gameOver(){
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, getWidth()/2, 200);
         Greenfoot.playSound("sounds/gameOver.mp3");
+    }
+    
+    /**
+     * Creates gift every time the user destroys 15 fish
+     */
+    public void createGift(){
+        if(score%15==0 && health!=3){
+            Gift gift = new Gift();
+        
+            int x = getWidth();
+            int y = Greenfoot.getRandomNumber(getHeight());
+            
+            addObject(gift, x, y);
+        }
+    }
+    
+    /**
+     * Automatically sets game to score 14 (purpose is for testing gift feature)
+     */
+    public void cheat(){
+        //Changes score to 14 if user clicks button
+        if(Greenfoot.mousePressed(cheat)){
+            Greenfoot.playSound("sounds/click.mp3");
+            score=14;
+        }
     }
 }

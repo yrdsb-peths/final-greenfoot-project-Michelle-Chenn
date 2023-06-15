@@ -32,7 +32,7 @@ public class Fish extends Actor
     }
     public void act()
     {
-        //makes Fish move left down
+        //makes Fish move left
         setLocation(getX() - level, getY());
         
         //Remove fish and decreases health when fish pass merguy
