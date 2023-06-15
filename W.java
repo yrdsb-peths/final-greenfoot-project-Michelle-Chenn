@@ -9,14 +9,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class W extends Actor
 {
     GreenfootImage w = new GreenfootImage("images/keys/pxkw_w.png");
+    public W(){
+        setImage(w);
+    }
     /**
      * Act - do whatever the W wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public W(){
-        setImage(w);
-    }
-    
     public void act()
     {
         // Add your action code here.

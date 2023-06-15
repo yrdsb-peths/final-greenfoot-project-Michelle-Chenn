@@ -11,9 +11,12 @@ public class MyWorld extends World
     SimpleTimer fishMove = new SimpleTimer();
     int speed = 1500;
     Label scoreLabel;
-    Label healthBar;
-    public int health = 5;
+    public int health = 3;
     public int score = 0;
+    
+    Heart heart1 = new Heart();
+    Heart heart2 = new Heart();
+    Heart heart3 = new Heart();
     
     /**
      * Constructor for objects of class MyWorld.
@@ -32,9 +35,10 @@ public class MyWorld extends World
         scoreLabel = new Label(0, 60);
         addObject(scoreLabel, 50, 50);
         
-        //Create health bar
-        healthBar = new Label (5, 60);
-        addObject(healthBar, 550, 50);
+        //Create hearts
+        addObject(heart1, 470, 50);
+        addObject(heart2, 520, 50);
+        addObject(heart3, 570, 50);
     }
     
     public void act(){
@@ -71,10 +75,23 @@ public class MyWorld extends World
     /**
      * Decreases health and ends game when health reaches 0
      */
+    
     public void decreaseHealth(){
         if(health>0){
             health--;
-            healthBar.setValue(health);
+            NoHeart noHeart = new NoHeart();
+            if(health==2){
+                addObject(noHeart, 570, 50);
+                removeObject(heart3);
+            }
+            if(health==1){
+                addObject(noHeart, 520, 50);
+                removeObject(heart2);
+            }
+            if(health==0){
+                addObject(noHeart, 470, 50);
+                removeObject(heart1);
+            }
         }
         
         if(health==0){
@@ -87,6 +104,6 @@ public class MyWorld extends World
      */
     public void gameOver(){
         Label gameOverLabel = new Label("Game Over", 100);
-        addObject(gameOverLabel, 355, 200);
+        addObject(gameOverLabel, getWidth()/2, 200);
     }
 }

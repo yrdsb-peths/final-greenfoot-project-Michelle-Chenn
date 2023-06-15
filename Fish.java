@@ -37,7 +37,7 @@ public class Fish extends Actor
         
         //Remove fish and decreases health when fish pass merguy
         MyWorld world = (MyWorld) getWorld();
-        int health = 5;
+        int health = 3;
         if(getX() == 0){
             health--;
             if(health>0){
@@ -45,6 +45,7 @@ public class Fish extends Actor
             }
             world.removeObject(this);
         }
+        
         animateFish();
     }
     int imageIndex = 0;
