@@ -43,6 +43,7 @@ public class Merguy extends Actor
     
     public void act()
     {
+        //Moves Merguy up and down when 'w' or 's' keys are pressed
         if(Greenfoot.isKeyDown("s")){
             setLocation(getX(), getY() + speed);
             facing = "down";

@@ -10,6 +10,7 @@ public class W extends Actor
 {
     GreenfootImage w = new GreenfootImage("images/keys/pxkw_w.png");
     public W(){
+        //W image
         setImage(w);
     }
     /**

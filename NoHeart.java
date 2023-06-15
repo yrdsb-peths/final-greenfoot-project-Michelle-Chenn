@@ -10,6 +10,7 @@ public class NoHeart extends Actor
 {
     GreenfootImage noHeart = new GreenfootImage("images/health/HeartEmpty.png");
     public NoHeart(){
+        //Lost heart image
         setImage(noHeart);
     }
     /**

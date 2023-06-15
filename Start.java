@@ -14,6 +14,7 @@ public class Start extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Start(){
+        //Start button image
         start.scale(60, 60);
         setImage(start);
     }

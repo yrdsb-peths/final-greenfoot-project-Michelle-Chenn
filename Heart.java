@@ -10,6 +10,7 @@ public class Heart extends Actor
 {
     GreenfootImage heart = new GreenfootImage("images/health/HeartFull.png");
     public Heart(){
+        //Heart image
         setImage(heart);
     }
     /**

@@ -24,6 +24,7 @@ public class Instructions extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         
+        //Add instructions
         addObject(upKey, getWidth()/2, 115);
         addObject(downKey, getWidth()/2, 145);
         addObject(shootKey, getWidth()/2, 175);
@@ -37,7 +38,7 @@ public class Instructions extends World
      * The main world act loop
      */
     public void act(){
-        //Start game if user clicks mouse
+        //Start game if user clicks button
         if(Greenfoot.mousePressed(start)){
             Greenfoot.playSound("sounds/click.mp3");
             MyWorld gameWorld = new MyWorld();

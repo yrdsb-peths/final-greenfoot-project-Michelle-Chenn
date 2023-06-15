@@ -19,14 +19,17 @@ public class TitleScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         
+        //Add title
         addObject(titleLabel, getWidth()/2, 150);
+        
+        //Add start button
         addObject(start, getWidth()/2, 250);
     }
     /**
      * The main world act loop
      */
     public void act(){
-        //Start game if user clicks mouse
+        //Move on to instructions if user clicks button
         if(Greenfoot.mousePressed(start)){
             Greenfoot.playSound("sounds/click.mp3");
             Instructions instructions = new Instructions();

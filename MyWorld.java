@@ -54,7 +54,7 @@ public class MyWorld extends World
     }
     
     /**
-     * Create new fish at a random location at top of screen
+     * Create new fish at a random location at right of screen
      */
     public void createFish(){
         Fish fishies = new Fish();

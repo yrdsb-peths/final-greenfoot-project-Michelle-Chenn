@@ -32,7 +32,7 @@ public class Fish extends Actor
     }
     public void act()
     {
-        //makes it fall down
+        //makes Fish move left down
         setLocation(getX() - level, getY());
         
         //Remove fish and decreases health when fish pass merguy
@@ -61,6 +61,9 @@ public class Fish extends Actor
         imageIndex = (imageIndex + 1) % walk.length;
     }
     
+    /**
+     * Sets movement speed of fish
+     */
     public void setSpeed(int spd){
         level = spd;
     }

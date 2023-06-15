@@ -28,7 +28,7 @@ public class Mouse extends Actor
     int imageIndex = 0;
     public void act()
     {
-        //Animates Moouse
+        //Animates Mouse
         if(animationTimer.millisElapsed() < 300){
                     return;
         }

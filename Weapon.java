@@ -38,6 +38,9 @@ public class Weapon extends Actor
     }
     
     int imageIndex1 = 0;
+    /**
+     * Animates Weapon when it is shot
+     */
     public void shootAnimation(){
         if(animationTimer.millisElapsed() < 190){
                 return;
