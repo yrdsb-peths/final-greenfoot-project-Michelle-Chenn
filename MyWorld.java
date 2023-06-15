@@ -10,6 +10,7 @@ public class MyWorld extends World
 {
     SimpleTimer fishMove = new SimpleTimer();
     int speed = 1500;
+    int level = 1;
     Label scoreLabel;
     public int health = 3;
     public int score = 0;
@@ -57,6 +58,7 @@ public class MyWorld extends World
      */
     public void createFish(){
         Fish fishies = new Fish();
+        fishies.setSpeed(level);
         
         int x = getWidth();
         int y = Greenfoot.getRandomNumber(getHeight());
@@ -70,6 +72,11 @@ public class MyWorld extends World
     public void increaseScore(){
         score++;
         scoreLabel.setValue(score);
+        
+        if(score%5==0){
+            level += 1;
+            speed -= 200;
+        }
     }
     
     /**
@@ -100,7 +107,7 @@ public class MyWorld extends World
     }
     
     /**
-     * End the game and draw 'GamOver'
+     * End the game and draw 'GameOver'
      */
     public void gameOver(){
         Label gameOverLabel = new Label("Game Over", 100);

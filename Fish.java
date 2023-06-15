@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Fish extends Actor
 {
-    int speed = 1;
+    int level = 1;
     GreenfootImage[] walk = new GreenfootImage[4];
     
     SimpleTimer animationTimer = new SimpleTimer();
@@ -33,7 +33,7 @@ public class Fish extends Actor
     public void act()
     {
         //makes it fall down
-        setLocation(getX() - speed, getY());
+        setLocation(getX() - level, getY());
         
         //Remove fish and decreases health when fish pass merguy
         MyWorld world = (MyWorld) getWorld();
@@ -58,5 +58,9 @@ public class Fish extends Actor
         
         setImage(walk[imageIndex]);
         imageIndex = (imageIndex + 1) % walk.length;
+    }
+    
+    public void setSpeed(int spd){
+        level = spd;
     }
 }
