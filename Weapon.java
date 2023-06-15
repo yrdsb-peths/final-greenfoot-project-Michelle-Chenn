@@ -33,6 +33,12 @@ public class Weapon extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.increaseScore();
         }
+        //Remove gift if weapon hits it
+        if(isTouching(Gift.class)){
+            removeTouching(Gift.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.increaseHealth();
+        }
         
     }
     

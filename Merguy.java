@@ -59,16 +59,16 @@ public class Merguy extends Actor
     /**
      * Fires weapon at enemies from whatever point the Merguy is at and animates attack
      */
-    MyWorld world = new MyWorld();
+    
     public void fireWeapon(){
-        if(Greenfoot.mousePressed()){
+        if(Greenfoot.mousePressed(null)){
             Weapon weapon = new Weapon();
-            getWorld().addObject(weapon, getX(), getY());
-
+            getWorld().addObject(weapon, getX() + 3, getY());
+            Greenfoot.playSound("sounds/magic.mp3");
             for(int i = 0; i < attack.length; i++){
                 setImage(attack[i]);
             }
-            Greenfoot.playSound("sounds/magic.mp3");
+            setRotation(0);
         }
     }
     
@@ -77,6 +77,7 @@ public class Merguy extends Actor
      */
     int imageIndex = 0;
     int imageIndex2 = 0;
+    int imageIndex3 = 0;
     public void animateMerguy(){
         //walking animation
         if(Greenfoot.isKeyDown("w")||Greenfoot.isKeyDown("s")){

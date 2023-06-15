@@ -14,7 +14,6 @@ public class MyWorld extends World
     Label scoreLabel;
     public int health = 3;
     public int score = 0;
-    Cheat cheat = new Cheat();
     
     Heart heart1 = new Heart();
     Heart heart2 = new Heart();
@@ -44,9 +43,6 @@ public class MyWorld extends World
         addObject(heart1, 470, 50);
         addObject(heart2, 520, 50);
         addObject(heart3, 570, 50);
-        
-        //Add cheat button
-        addObject(cheat, 20, 360);
     }
     
     public void act(){
@@ -56,6 +52,7 @@ public class MyWorld extends World
                 return;
             }
             fishMove.mark();
+            cheat();
             createFish();
             createGift();
         }
@@ -81,7 +78,7 @@ public class MyWorld extends World
         score++;
         scoreLabel.setValue(score);
         
-        if(score%5==0){
+        if(score%10==0){
             level += 1;
             speed -= 200;
         }
@@ -121,12 +118,13 @@ public class MyWorld extends World
         if(health==2){
             addObject(heart3, 570, 50);
             removeObject(noHeart3);
+            health++;
         }
         if(health==1){
             addObject(heart2, 520, 50);
             removeObject(noHeart2);
+            health++;
         }
-        health++;
     }
     
     /**
@@ -157,9 +155,10 @@ public class MyWorld extends World
      */
     public void cheat(){
         //Changes score to 14 if user clicks button
-        if(Greenfoot.mousePressed(cheat)){
+        if(Greenfoot.isKeyDown("space")){
             Greenfoot.playSound("sounds/click.mp3");
             score=14;
+            scoreLabel.setValue(score);
         }
     }
 }

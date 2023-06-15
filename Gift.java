@@ -25,11 +25,5 @@ public class Gift extends Actor
     {
         //makes Gift move left
         setLocation(getX() - level, getY());
-        
-        if(isTouching(Weapon.class)){
-            removeTouching(Weapon.class);
-            MyWorld world = (MyWorld) getWorld();
-            world.increaseHealth();
-        }
     }
 }
