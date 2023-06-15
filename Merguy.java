@@ -66,6 +66,7 @@ public class Merguy extends Actor
             for(int i = 0; i < attack.length; i++){
                 setImage(attack[i]);
             }
+            Greenfoot.playSound("sounds/magic.mp3");
         }
     }
     

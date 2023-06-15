@@ -39,6 +39,7 @@ public class Instructions extends World
     public void act(){
         //Start game if user clicks mouse
         if(Greenfoot.mousePressed(start)){
+            Greenfoot.playSound("sounds/click.mp3");
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
         }

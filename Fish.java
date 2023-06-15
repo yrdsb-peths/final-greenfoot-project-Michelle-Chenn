@@ -44,6 +44,7 @@ public class Fish extends Actor
                 world.decreaseHealth();
             }
             world.removeObject(this);
+            Greenfoot.playSound("sounds/destroy.mp3");
         }
         
         animateFish();

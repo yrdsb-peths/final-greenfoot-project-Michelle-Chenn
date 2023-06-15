@@ -86,6 +86,7 @@ public class MyWorld extends World
     public void decreaseHealth(){
         if(health>0){
             health--;
+            Greenfoot.playSound("sounds/hurt.mp3");
             NoHeart noHeart = new NoHeart();
             if(health==2){
                 addObject(noHeart, 570, 50);
@@ -112,5 +113,6 @@ public class MyWorld extends World
     public void gameOver(){
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, getWidth()/2, 200);
+        Greenfoot.playSound("sounds/gameOver.mp3");
     }
 }
